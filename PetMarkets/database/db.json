@@ -1,184 +1,204 @@
 {
-    "users": [
-      {
-        "id": "1",
-        "name": "Long",
-        "email": "admin@gmail.com",
-        "phone": "0987654321",
-        "pass": "123456"
-      },
-      {
-        "id": "1b17",
-        "name": "b",
-        "email": "1",
-        "phone": "b",
-        "pass": "1"
-      },
-      {
-        "id": "e944",
-        "name": "2",
-        "email": "2",
-        "phone": "2",
-        "pass": "2"
-      },
-      {
-        "id": "f294",
-        "name": "long2",
-        "email": "long@gmail.com",
-        "phone": "0987654321",
-        "pass": "123456"
-      },
-      {
-        "id": "bfa2",
-        "name": "lll",
-        "email": "a@gmail.com",
-        "phone": "0987654321",
-        "pass": "123456"
-      }
-    ],
-    "animals": [
-        {
-            "id": 1,
-            "name": "Chó Golden Retriever",
-            "breed": "Golden Retriever",
-            "age": 1,
-            "price": 15000000,
-            "description": "Chó Golden Retriever thuần chủng, thân thiện, năng động, thích hợp với gia đình có trẻ nhỏ.",
-            "image": "https://petnow.com.vn/wp-content/uploads/2023/10/z4764632946149_f1ac3c74b1719253b57459d8e834e27d-scaled.jpg"
-        },
-        {
-            "id": 2,
-            "name": "Mèo Anh lông ngắn",
-            "breed": "Anh lông ngắn",
-            "age": 2,
-            "price": 8000000,
-            "description": "Mèo Anh lông ngắn màu xám xanh, ngoan ngoãn, dễ chăm sóc.",
-            "image": "https://cdn.eva.vn/upload/3-2022/images/2022-08-12/image31-1660292104-121-width2048height1972.jpg"
-        },
-        {
-            "id": 3,
-            "name": "Hamster Bear",
-            "breed": "Hamster Bear",
-            "age": 0.5,
-            "price": 500000,
-            "description": "Hamster Bear khỏe mạnh, dễ nuôi, thích hợp cho người mới bắt đầu.",
-            "image": "https://mew.vn/wp-content/uploads/2021/03/chuot-hamster-bear-1.jpg"
-        },
-        {
-            "id": 4,
-            "name": "Rùa cảnh",
-            "breed": "Rùa tai đỏ",
-            "age": 1.5,
-            "price": 300000,
-            "description": "Rùa tai đỏ khỏe mạnh, dễ nuôi, tuổi thọ cao.",
-            "image": "https://vietpetgarden.net/wp-content/uploads/2018/05/rua-nui-vang.jpg"
-        },
-        {
-            "id": 5,
-            "name": "Cá vàng Ranchu",
-            "breed": "Ranchu",
-            "age": 1,
-            "price": 200000,
-            "description": "Cá vàng Ranchu với hình dáng độc đáo, màu sắc đẹp mắt.",
-            "image": "https://chocamekong.com/wp-content/uploads/2019/02/c%C3%A1-ranchu.jpg"
-        }
-    ],
-    "PhuKien": [
-        {
-            "id": 1,
-            "name": "Lồng nuôi",
-            "brand": "VuBan",
-            "price": 400000,
-            "description": "Dành cho các loại thú cưng như hamster, thỏ, chim, ... Cần chọn loại lồng có kích thước phù hợp, đảm bảo thông thoáng, an toàn.",
-            "image": "https://hamsterkingdom.com/wp-content/uploads/2018/08/Vuong-Quoc-Chuot-Hamster-Long-Khong-Lo-Cam.jpg"
-        },
-        {
-            "id": 2,
-            "name": "Cát vệ sinh cho mèo",
-            "brand": "Me-O",
-            "price": 100000,
-            "description": "Cát vệ sinh cho mèo với khả năng khử mùi hiệu quả, giúp giữ vệ sinh cho không gian sống.",
-            "image": "https://example.com/images/cat-litter.jpg"
-        },
-        {
-            "id": 3,
-            "name": "Lồng nuôi hamster",
-            "brand": "Ferplast",
-            "price": 300000,
-            "description": "Lồng nuôi hamster với thiết kế rộng rãi, thoáng mát, giúp hamster thoải mái vận động.",
-            "image": "https://example.com/images/hamster-cage.jpg"
-        },
-        {
-            "id": 4,
-            "name": "Vòng cổ và dây dắt",
-            "brand": "Flexi",
-            "price": 100000,
-            "description": "Giúp bạn kiểm soát chó khi dắt đi dạo, đảm bảo an toàn cho chó và mọi người xung quanh. Có nhiều loại vòng cổ và dây dắt với chất liệu, kích cỡ và kiểu dáng đa dạng.",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT51H4IpnDOULYUpy2Lk8ggop_bIcM4kvs1BajxWjH6m4buhjF1Y7yezQFJQKHs"
-        },
-        {
-            "id": 5,
-            "name": "Bát ăn và bát uống nước",
-            "brand": "Comsun",
-            "price": 200000,
-            "description": " Cần chọn loại bát có kích thước phù hợp với chó, chất liệu an toàn, dễ vệ sinh.",
-            "image": "https://product.hstatic.net/1000104513/product/211de96c20b84eb3b0a4fb5f0789f21b_69a844fb05c54d6497d1413ff6189fe8.jpg"
-        },
-        {
-            "id":6,
-            "name":"Bóng",
-            "brand": "KONG",
-            "price":100000,
-            "description":"Giúp thú cưng giải trí, vận động, giảm stress và tránh các hành vi phá phách.",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT51H4IpnDOULYUpy2Lk8ggop_bIcM4kvs1BajxWjH6m4buhjF1Y7yezQFJQKHs"
-          }
-    ],
-    "Animals_Food": [
-        {
-            "id": 1,
-            "name": "Bánh thưởng cho mèo",
-            "brand": "GimCat Tabs",
-            "price": 500000,
-            "description": "Thức ăn cho chó trưởng thành, giàu dinh dưỡng, giúp chó khỏe mạnh và năng động.",
-            "image": "https://www.petmart.vn/wp-content/uploads/2023/04/snack-banh-thuong-cho-meo-vi-thit-gia-cam-gimcat-nutri-pockets-poultry-treats.jpg"
-        },
-        {
-            "id": 2,
-            "name": "Bánh thưởng dạng que cho chó",
-            "brand": "Pedigree Dentastix",
-            "price": 500000,
-            "description": "Thức ăn cho chó trưởng thành, giàu dinh dưỡng, giúp chó khỏe mạnh và năng động.",
-            "image": "https://gcs.tripi.vn/public-tripi/tripi-feed/img/473767qMm/banh-thuong-pedigree-479210.jpg"
-        },
-        {
-            "id": 3,
-            "name": "Pate cho mèo",
-            "brand": "Whiskas",
-            "price": 500000,
-            "description": "Pate cá ngừ có mùi vị thơm ngon, hấp dẫn mèo. Cá ngừ giàu omega 3 và các axit béo tốt cho sức khỏe của mèo.",
-            "image": "https://www.lottemart.vn/media/catalog/product/cache/0x0/8/8/8853301550123.jpg.webp"
-        },
-        {
-            "id": 4,
-            "name": "Thức ăn cho chó dạng hạt",
-            "brand": "Moshm",
-            "price": 500000,
-            "description": "Thức ăn cho chó Poodle của hãng MOSHM (Max Power) với các thành phần từ tự nhiên là lựa chọn hoàn hảo cho thú cưng của bạn.",
-            "image": "https://www.vietpet.net/wp-content/uploads/2019/01/thuc-an-cho-cho-poodle-moshm.jpg"
-        }
-    ],
-
-
-    "Cart":[
-      {
-    "id": 1,
-    "name": "Pate cho mèo",
-    "brand": "Whiskas",
-    "price": 500000,
-    "description": "Pate cá ngừ có mùi vị thơm ngon, hấp dẫn mèo. Cá ngừ giàu omega 3 và các axit béo tốt cho sức khỏe của mèo.",
-    "image": "https://www.lottemart.vn/media/catalog/product/cache/0x0/8/8/8853301550123.jpg.webp",
-    "soLuong":2
-
-
-    }]
-  }
+  "users": [
+    {
+      "id": "1",
+      "name": "Long",
+      "email": "admin@gmail.com",
+      "phone": "0987654321",
+      "pass": "123456"
+    },
+    {
+      "id": "1b17",
+      "name": "b",
+      "email": "1",
+      "phone": "b",
+      "pass": "1"
+    },
+    {
+      "id": "e944",
+      "name": "2",
+      "email": "2",
+      "phone": "2",
+      "pass": "2"
+    },
+    {
+      "id": "f294",
+      "name": "long2",
+      "email": "long@gmail.com",
+      "phone": "0987654321",
+      "pass": "123456"
+    },
+    {
+      "id": "bfa2",
+      "name": "lll",
+      "email": "a@gmail.com",
+      "phone": "0987654321",
+      "pass": "123456"
+    }
+  ],
+  "animals": [
+    {
+      "id": "1",
+      "name": "Chó Golden Retriever",
+      "breed": "Golden Retriever",
+      "age": 1,
+      "price": 15000000,
+      "description": "Chó Golden Retriever thuần chủng, thân thiện, năng động, thích hợp với gia đình có trẻ nhỏ.",
+      "image": "https://petnow.com.vn/wp-content/uploads/2023/10/z4764632946149_f1ac3c74b1719253b57459d8e834e27d-scaled.jpg",
+      "favorites": 1,
+      "loai": 1
+    },
+    {
+      "id": "2",
+      "name": "Mèo Anh lông ngắn",
+      "breed": "Anh lông ngắn",
+      "age": 2,
+      "price": 8000000,
+      "description": "Mèo Anh lông ngắn màu xám xanh, ngoan ngoãn, dễ chăm sóc.",
+      "image": "https://cdn.eva.vn/upload/3-2022/images/2022-08-12/image31-1660292104-121-width2048height1972.jpg",
+      "favorites": 0,
+      "loai": 1
+    },
+    {
+      "id": "3",
+      "name": "Hamster Bear",
+      "breed": "Hamster Bear",
+      "age": 0.5,
+      "price": 500000,
+      "description": "Hamster Bear khỏe mạnh, dễ nuôi, thích hợp cho người mới bắt đầu.",
+      "image": "https://mew.vn/wp-content/uploads/2021/03/chuot-hamster-bear-1.jpg",
+      "favorites": 0,
+      "loai": 1
+    },
+    {
+      "id": "4",
+      "name": "Rùa cảnh",
+      "breed": "Rùa tai đỏ",
+      "age": 1.5,
+      "price": 300000,
+      "description": "Rùa tai đỏ khỏe mạnh, dễ nuôi, tuổi thọ cao.",
+      "image": "https://vietpetgarden.net/wp-content/uploads/2018/05/rua-nui-vang.jpg",
+      "favorites": 0,
+      "loai": 1
+    },
+    {
+      "id": "5",
+      "name": "Cá vàng Ranchu",
+      "breed": "Ranchu",
+      "age": 1,
+      "price": 200000,
+      "description": "Cá vàng Ranchu với hình dáng độc đáo, màu sắc đẹp mắt.",
+      "image": "https://chocamekong.com/wp-content/uploads/2019/02/c%C3%A1-ranchu.jpg",
+      "favorites": 0,
+      "loai": 1
+    },
+    {
+      "id": "6",
+      "name": "Lồng nuôi",
+      "price": 400000,
+      "description": "Dành cho các loại thú cưng như hamster, thỏ, chim, ... Cần chọn loại lồng có kích thước phù hợp, đảm bảo thông thoáng, an toàn.",
+      "image": "https://hamsterkingdom.com/wp-content/uploads/2018/08/Vuong-Quoc-Chuot-Hamster-Long-Khong-Lo-Cam.jpg",
+      "favorites": 0,
+      "loai": 2
+    },
+    {
+      "id": "7",
+      "name": "Cát vệ sinh cho mèo",
+      "brand": "Me-O",
+      "price": 100000,
+      "description": "Cát vệ sinh cho mèo với khả năng khử mùi hiệu quả, giúp giữ vệ sinh cho không gian sống.",
+      "image": "https://example.com/images/cat-litter.jpg",
+      "favorites": 0,
+      "loai": 2
+    },
+    {
+      "id": "8",
+      "name": "Lồng nuôi hamster",
+      "brand": "Ferplast",
+      "price": 300000,
+      "description": "Lồng nuôi hamster với thiết kế rộng rãi, thoáng mát, giúp hamster thoải mái vận động.",
+      "image": "https://example.com/images/hamster-cage.jpg",
+      "favorites": 0,
+      "loai": 2
+    },
+    {
+      "id": "9",
+      "name": "Vòng cổ và dây dắt",
+      "price": 100000,
+      "description": "Giúp bạn kiểm soát chó khi dắt đi dạo, đảm bảo an toàn cho chó và mọi người xung quanh. Có nhiều loại vòng cổ và dây dắt với chất liệu, kích cỡ và kiểu dáng đa dạng.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT51H4IpnDOULYUpy2Lk8ggop_bIcM4kvs1BajxWjH6m4buhjF1Y7yezQFJQKHs",
+      "favorites": 0,
+      "loai": 2
+    },
+    {
+      "id": "10",
+      "name": "Bát ăn và bát uống nước",
+      "brand": "Comsun",
+      "price": 200000,
+      "description": " Cần chọn loại bát có kích thước phù hợp với chó, chất liệu an toàn, dễ vệ sinh.",
+      "image": "https://product.hstatic.net/1000104513/product/211de96c20b84eb3b0a4fb5f0789f21b_69a844fb05c54d6497d1413ff6189fe8.jpg",
+      "favorites": 0,
+      "loai": 2
+    },
+    {
+      "id": "11",
+      "name": "Bóng",
+      "brand": "KONG",
+      "price": 100000,
+      "description": "Giúp thú cưng giải trí, vận động, giảm stress và tránh các hành vi phá phách.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT51H4IpnDOULYUpy2Lk8ggop_bIcM4kvs1BajxWjH6m4buhjF1Y7yezQFJQKHs",
+      "favorites": 1,
+      "loai": 2
+    },
+    {
+      "id": "12",
+      "name": "Bánh thưởng cho mèo",
+      "price": 500000,
+      "description": "Thức ăn cho chó trưởng thành, giàu dinh dưỡng, giúp chó khỏe mạnh và năng động.",
+      "image": "https://www.petmart.vn/wp-content/uploads/2023/04/snack-banh-thuong-cho-meo-vi-thit-gia-cam-gimcat-nutri-pockets-poultry-treats.jpg",
+      "favorites": 1,
+      "loai": 3
+    },
+    {
+      "id": "13",
+      "name": "Bánh thưởng dạng que cho chó",
+      "brand": "Pedigree Dentastix",
+      "price": 500000,
+      "description": "Thức ăn cho chó trưởng thành, giàu dinh dưỡng, giúp chó khỏe mạnh và năng động.",
+      "image": "https://gcs.tripi.vn/public-tripi/tripi-feed/img/473767qMm/banh-thuong-pedigree-479210.jpg",
+      "favorites": 0,
+      "loai": 3
+    },
+    {
+      "id": "14",
+      "name": "Pate cho mèo",
+      "brand": "Whiskas",
+      "price": 500000,
+      "description": "Pate cá ngừ có mùi vị thơm ngon, hấp dẫn mèo. Cá ngừ giàu omega 3 và các axit béo tốt cho sức khỏe của mèo.",
+      "image": "https://www.lottemart.vn/media/catalog/product/cache/0x0/8/8/8853301550123.jpg.webp",
+      "favorites": 0,
+      "loai": 3
+    },
+    {
+      "id": "15",
+      "name": "Thức ăn cho chó dạng hạt",
+      "brand": "Moshm",
+      "price": 500000,
+      "description": "Thức ăn cho chó Poodle của hãng MOSHM (Max Power) với các thành phần từ tự nhiên là lựa chọn hoàn hảo cho thú cưng của bạn.",
+      "image": "https://www.vietpet.net/wp-content/uploads/2019/01/thuc-an-cho-cho-poodle-moshm.jpg",
+      "favorites": 0,
+      "loai": 3
+    }
+  ],
+  "Cart": [
+    {
+      "id": "4",
+      "name": "Pate cho mèo",
+      "brand": "Whiskas",
+      "price": 500000,
+      "description": "Pate cá ngừ có mùi vị thơm ngon, hấp dẫn mèo. Cá ngừ giàu omega 3 và các axit béo tốt cho sức khỏe của mèo.",
+      "image": "https://www.lottemart.vn/media/catalog/product/cache/0x0/8/8/8853301550123.jpg.webp",
+      "soLuong": 2
+    }
+  ]
+}

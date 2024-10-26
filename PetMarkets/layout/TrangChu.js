@@ -2,13 +2,13 @@ import { ImageBackground, ScrollView, StyleSheet, Text, View, SafeAreaView, Imag
 import React, { useEffect, useState } from 'react'
 export const URL = 'http://192.168.1.148:3000/'
 import Swiper from 'react-native-swiper';
-const TrangChu = () => {
+const TrangChu = ({navigation}) => {
   const [data, setdata] = useState([])
   const [thucAn, setthucAn] = useState([])
   const [phuKien, setphuKien] = useState([])
 
   const getData = async () => {
-    await fetch(URL + 'animals')
+    await fetch(URL + 'animals?loai=1')
       .then(res => res.json())
       .then(data => {
         setdata(data)
@@ -20,7 +20,7 @@ const TrangChu = () => {
   }
 
   const getPhuKien = async () => {
-    await fetch(URL + 'PhuKien')
+    await fetch(URL + 'animals?loai=2')
       .then(res => res.json())
       .then(data => {
         setphuKien(data)
@@ -31,7 +31,7 @@ const TrangChu = () => {
 
   }
   const getThucAn = async () => {
-    await fetch(URL + 'Animals_Food')
+    await fetch(URL + 'animals?loai=3')
       .then(res => res.json())
       .then(data => {
         setthucAn(data)
@@ -56,14 +56,17 @@ const TrangChu = () => {
   const renderItem = ({ item }) => {
     return (
       <View>
-        {/* <TouchableOpacity onPress={()=>navigation.navigate('chiTietCt',{item : item})}> */}
+        
         <View style={{ margin: 20 }}>
+         <TouchableOpacity onPress={()=>{navigation.navigate('Detail',{item : item});
+         }}> 
           <Image style={{ width: 186, height: 200, backgroundColor: '#CCCCCC', borderRadius: 10, padding: 20 }} source={{ uri: `${item.image}` }} />
-          <Text style={{ color: 'black', fontSize: 19, marginTop: 10, fontWeight: 'bold' }}>$ {item.price}</Text>
+           </TouchableOpacity>
+           <Text style={{ color: 'black', fontSize: 19, marginTop: 10, fontWeight: 'bold' }}>$ {item.price}</Text>
           <Text style={{ fontSize: 19, color: 'black', fontWeight: 'bold' }}>{item.name}</Text>
 
         </View>
-        {/* </TouchableOpacity> */}
+       
       </View>
     )
   }
@@ -167,17 +170,26 @@ const TrangChu = () => {
           <Image source={require('../Image/clarity_home-solid.png')} />
           <Text style={{ color: 'white', textAlign: 'center' }}>Home</Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>{
+          navigation.navigate('Cart')
+        }}>
           <Image source={require('../Image/btn_2 1.png')} />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity  onPress={()=>{
+          navigation.navigate('Favorites')
+        }}>
           <Image source={require('../Image/btn_3 1.png')} />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>{
+          navigation.navigate('Oder')
+        }}>
           <Image source={require('../Image/btn_4 1.png')} />
         </TouchableOpacity>
-        <TouchableOpacity>
-          <Image source={require('../Image/btn_5 1.png')} /></TouchableOpacity>
+        <TouchableOpacity onPress={()=>{
+          navigation.navigate('Porofile')
+        }}>
+          <Image source={require('../Image/btn_5 1.png')} />
+          </TouchableOpacity>
       </View>
     </SafeAreaView>
   )
