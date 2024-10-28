@@ -5,9 +5,9 @@ import { URL } from './TrangChu';
 const Detail = ({ navigation, route }) => {
 
   const [data, setdata] = useState([])
-  
+  const [item, setitem] = useState([])
   const [haha, sethaha] = useState()
-  const { item } = route.params;
+  
   
   const getData = async () => {
     await fetch(URL + 'animals')
@@ -23,7 +23,8 @@ const Detail = ({ navigation, route }) => {
 
   useEffect(() => {
     getData()
-    sethaha(item.favorites)
+    const { item } = route.params;
+    setitem(item)
   }, [])
 
 
@@ -91,7 +92,7 @@ const Detail = ({ navigation, route }) => {
             <Text style={{ fontSize: 19, color: 'white', fontWeight: 'bold' }}>Add To Cart</Text>
           </TouchableOpacity>
 
-          {haha ?
+          {item.favorites ?
             <TouchableOpacity style={{ padding: 18, backgroundColor: 'red', borderRadius: 10, alignSelf: 'center' }} onPress={() => {
               id = item.id
               ten = item.name

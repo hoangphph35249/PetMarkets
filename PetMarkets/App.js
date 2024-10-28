@@ -12,6 +12,7 @@ import Porofile from './layout/Porofile';
 import Wellcome from './layout/WellCome';
 import DangNhap from './layout/DangNhap';
 import DangKy from './layout/DangKy';
+import SeeAll from './layout/SeeAll';
 
 export default function App() {
   const stack = createNativeStackNavigator()
@@ -27,6 +28,7 @@ export default function App() {
       <stack.Screen component={Porofile} name='Porofile'/>
       <stack.Screen  component={DangNhap} name='DangNhap'/>
       <stack.Screen  component={DangKy} name='DangKy'/>
+      <stack.Screen  component={SeeAll} name='SeeAll'/>
       </stack.Navigator>
     </NavigationContainer>
     // <View>

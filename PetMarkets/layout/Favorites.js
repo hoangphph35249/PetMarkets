@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { TouchableOpacity } from 'react-native'
 import { URL } from './TrangChu'
 
-const Favorites = () => {
+const Favorites = ({navigation}) => {
   const [data, setdata] = useState([])
   const [thucAn, setthucAn] = useState([])
   const [phuKien, setphuKien] = useState([])
@@ -140,18 +140,17 @@ const Favorites = () => {
         <View style={{ height: 70 }}></View>
       </ScrollView>
       <View style={{ width: '92%', position: 'absolute', height: 80, padding: 20, margin: 20, backgroundColor: '#6394B7', flexDirection: 'row', justifyContent: 'space-around', borderRadius: 50, alignItems: 'center', alignSelf: 'flex-end' }}>
-        <View>
-
-
-
+        <TouchableOpacity onPress={() => {
+          navigation.navigate('TrangChu')
+        }}>
           <Image source={require('../Image/clarity_home-solid.png')} />
-        </View>
+        </TouchableOpacity>
         <TouchableOpacity onPress={() => {
           navigation.navigate('Cart')
         }}>
           <Image source={require('../Image/btn_2 1.png')} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {
+        <TouchableOpacity style={{alignItems:'center'}} onPress={() => {
           navigation.navigate('Favorites')
         }}>
           <Image source={require('../Image/btn_3 1.png')} />

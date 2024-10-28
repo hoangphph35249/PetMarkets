@@ -118,7 +118,11 @@ const TrangChu = ({navigation}) => {
         </View>
         <View style={{ justifyContent: 'space-between', flexDirection: 'row', marginHorizontal: 10 }}>
           <Text style={styles.txt}>animals</Text>
+          <TouchableOpacity onPress={()=>{
+            navigation.navigate('SeeAll',{loai: 1})
+          }}>
           <Text style={[styles.txt, { color: '#46A2A3' }]}>See all</Text>
+        </TouchableOpacity>
         </View>
         <FlatList 
         scrollEnabled={false}
@@ -135,7 +139,11 @@ const TrangChu = ({navigation}) => {
 
         <View style={{ justifyContent: 'space-between', flexDirection: 'row', marginHorizontal: 10 }}>
           <Text style={styles.txt}>accessory</Text>
+          <TouchableOpacity onPress={()=>{
+            navigation.navigate('SeeAll',{loai: 3})
+          }}>
           <Text style={[styles.txt, { color: '#46A2A3' }]}>See all</Text>
+        </TouchableOpacity>
         </View>
         <FlatList scrollEnabled={false}
           keyExtractor={item => item.id}
@@ -151,7 +159,11 @@ const TrangChu = ({navigation}) => {
         </View>
         <View style={{ justifyContent: 'space-between', flexDirection: 'row', marginHorizontal: 10 }}>
           <Text style={styles.txt}>Animals Food</Text>
+          <TouchableOpacity onPress={()=>{
+            navigation.navigate('SeeAll',{loai: 2})
+          }}>
           <Text style={[styles.txt, { color: '#46A2A3' }]}>See all</Text>
+        </TouchableOpacity>
         </View>
         <FlatList scrollEnabled={false}
           keyExtractor={item => item.id}
@@ -163,7 +175,7 @@ const TrangChu = ({navigation}) => {
         <View style={{height:70}}></View>
       </ScrollView>
       <View style={{ width: '92%', position: 'absolute', height: 80, padding: 20, margin: 20, backgroundColor: '#6394B7', flexDirection: 'row', justifyContent: 'space-around', borderRadius: 50, alignItems: 'center', alignSelf: 'flex-end' }}>
-        <View>
+        <View style={{alignItems:'center'}}>
 
 
 

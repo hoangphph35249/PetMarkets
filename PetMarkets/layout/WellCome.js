@@ -1,6 +1,5 @@
-import { Button, Image, ImageBackground, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import {  Image, SafeAreaView, StyleSheet, Text, View,TouchableOpacity } from 'react-native'
 import React from 'react'
-import { TouchableOpacity } from 'react-native'
 
 const Wellcome = ({navigation}) => {
   return (
@@ -95,7 +94,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#6394B7',
     height: 40,
     width: 200,
-    borderRadius: '1000',
+    borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 20
