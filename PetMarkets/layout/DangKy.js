@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView, StyleSheet, Text, TextInput, View, TouchableOpacity, Image } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, TextInput, View, TouchableOpacity, Image, ScrollView } from 'react-native';
 
 const ManHinhDangKy = ({ navigation }) => {
   const [name, setName] = useState('');
@@ -34,7 +34,7 @@ const ManHinhDangKy = ({ navigation }) => {
   const xuLyDangKy = async () => {
     console.log('Đăng ký với:', name, email, password);
     setSuccessMessage("Đăng ký thành công!");  // Hiển thị thông báo thành công
-    
+
     // Chuyển đến màn hình đăng nhập (giả lập điều hướng)
     setTimeout(() => {
       navigation.navigate('Login');
@@ -42,66 +42,53 @@ const ManHinhDangKy = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.logoContainer}>
-        <Image source={require('../Image/logo.jpg')} style={styles.logo} /> {/* Thay đổi đường dẫn hình ảnh nếu cần */}
-      </View>
-      <View style={styles.formContainer}>
-        <TextInput
-          value={name}
-          onChangeText={setName}
-          placeholder="Name"
-          style={styles.input}
-        />
-        <TextInput
-          value={email}
-          onChangeText={setEmail}
-          placeholder="Email"
-          keyboardType="email-address"
-          style={styles.input}
-        />
-        <View style={styles.passwordContainer}>
-          <TextInput
-            value={password}
-            onChangeText={setPassword}
-            placeholder="Password"
-            secureTextEntry={showPassword}
-            style={styles.passwordInput}
-          />
-          <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
-            <Text style={styles.showPasswordIcon}>👁</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.passwordContainer}>
-          <TextInput
-            value={confirmPassword}
-            onChangeText={setConfirmPassword}
-            placeholder="Confirm Password"
-            secureTextEntry={showConfirmPassword}
-            style={styles.passwordInput}
-          />
-          <TouchableOpacity onPress={() => setShowConfirmPassword(!showConfirmPassword)}>
-            <Text style={styles.showPasswordIcon}>👁</Text>
-          </TouchableOpacity>
+    <SafeAreaView >
+      <ScrollView contentContainerStyle={{ width: '100%', alignItems: 'center' ,backgroundColor:'white', height:'100%'}}>
+        <View style={styles.logoContainer}>
+          <Image source={require('../Image/logo.jpg')} style={styles.logo} />
         </View>
 
-        {/* Hiển thị thông báo lỗi */}
-        {errorMessage ? <Text style={styles.errorMessage}>{errorMessage}</Text> : null}
 
-        {/* Hiển thị thông báo thành công */}
-        {successMessage ? <Text style={styles.successMessage}>{successMessage}</Text> : null}
+        <View style={styles.inputContainer}>
+          <Text style={{ fontSize: 17, color: '#909090', marginVertical: 10 }}>Name</Text>
+          <TextInput
+            style={styles.input}
+          />
+          <View style={{ backgroundColor: '#E0E0E0', height: 1, marginBottom: 20 }} />
+          <Text style={{ fontSize: 17, color: '#909090', marginVertical: 10 }}>Email</Text>
+          <TextInput
+            style={styles.input}
+          />
+          <View style={{ backgroundColor: '#E0E0E0', height: 1, marginBottom: 20 }} />
 
-        <TouchableOpacity onPress={validateAndRegister} style={styles.registerButton}>
-          <Text style={styles.registerButtonText}>Đăng Ký</Text>
-        </TouchableOpacity>
-        
-        <Text style={styles.loginPrompt}>
-          Bạn đã có tài khoản?{" "}
-          <Text style={styles.loginLink} onPress={() => navigation.navigate('Login')}>
-            Đăng Nhập
-          </Text>
-        </Text>
-      </View>
+
+          <Text style={{ fontSize: 17, color: '#909090', marginVertical: 10 }}>Password</Text>
+          <TextInput
+            style={styles.input}
+          />
+          <View style={{ backgroundColor: '#E0E0E0', height: 1, marginBottom: 20 }} />
+
+
+          <Text style={{ fontSize: 17, color: '#909090', marginVertical: 10 }}>Confirm Password</Text>
+          <TextInput
+            style={styles.input}
+          />
+          <View style={{ backgroundColor: '#E0E0E0', height: 1, marginBottom: 20 }} />
+
+          <TouchableOpacity style={styles.loginButton}>
+            <Text style={styles.loginButtonText}>Đăng Ký</Text>
+          </TouchableOpacity>
+
+          <View style={styles.registerButton}>
+            <Text style={styles.registerButtonText}>Bạn đã có tài khoản ?</Text>
+            <TouchableOpacity onPress={()=>{
+              navigation.navigate('DangNhap')
+            }}>
+              <Text style={{ fontSize: 19, fontWeight: 'bold', color: 'black' }}>  Đăng Nhập</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -110,48 +97,53 @@ export default ManHinhDangKy;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    backgroundColor: 'white',
+    alignItems: 'center'
   },
   logoContainer: {
     alignItems: 'center',
-    marginTop: 40,
+    marginBottom: 20,
   },
   logo: {
-    width: 100,
-    height: 100,
-    resizeMode: 'contain',
+    width: 150,
+    height: 150,
+    margin: 10
   },
-  formContainer: {
+  inputContainer: {
     width: '90%',
-    padding: 20,
-    backgroundColor: '#f9f9f9',
-    borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 10,
-    elevation: 5,
-    marginTop: 20,
+    backgroundColor: 'white',
+    elevation: 2,
+    padding: 20
   },
   input: {
-    height: 50,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
-    marginBottom: 20,
-    paddingHorizontal: 10,
+    color: 'gray',
   },
-  passwordContainer: {
-    flexDirection: 'row',
+  forgotPassword: {
+    alignSelf: 'center',
+    margin: 10,
+    color: 'black',
+    fontSize: 19
+  },
+  loginButton: {
+    backgroundColor: '#6394B7',
+    borderRadius: 50,
+    justifyContent: 'center',
     alignItems: 'center',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
-    marginBottom: 20,
+    margin: 25
   },
-  showPasswordIcon: {
-    padding: 10,
-    fontSize: 18,
+  loginButtonText: {
+    color: 'white',
+    fontSize: 19,
+    padding: 15
+  },
+  registerButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 30,
+    flexDirection: 'row'
+  },
+  registerButtonText: {
+    color: 'black',
+    fontSize: 17,
   },
   errorMessage: {
     color: 'red',
@@ -162,26 +154,5 @@ const styles = StyleSheet.create({
     color: 'green',
     textAlign: 'center',
     marginBottom: 10,
-  },
-  registerButton: {
-    backgroundColor: '#4B9CD3',
-    height: 50,
-    borderRadius: 25,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  registerButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
-  loginPrompt: {
-    textAlign: 'center',
-    color: '#555',
-  },
-  loginLink: {
-    color: '#4B9CD3',
-    fontWeight: 'bold',
   },
 });

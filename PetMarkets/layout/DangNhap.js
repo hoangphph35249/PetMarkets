@@ -32,21 +32,23 @@ const ManHinhDangNhap = ({ navigation }) => {
       <View style={styles.logoContainer}>
         <Image source={require('../Image/logo.jpg')} style={styles.logo} />
       </View>
+
+
       <View style={styles.inputContainer}>
+        <Text style={{fontSize:17, color: '#909090',marginVertical:10}}>Email</Text>
         <TextInput
           value={email}
           onChangeText={setEmail}
-          placeholder="Email"
-          keyboardType="email-address"
           style={styles.input}
         />
+        <View style={{backgroundColor:'#E0E0E0', height:1,marginBottom:20}}/>
+        <Text style={{fontSize:17, color: '#909090',marginVertical:10}}>Password</Text>
         <TextInput
           value={matKhau}
           onChangeText={setMatKhau}
-          placeholder="Password"
-          secureTextEntry={true}
           style={styles.input}
         />
+        <View style={{backgroundColor:'#E0E0E0', height:1,marginBottom:20}}/>
 
         {/* Hiển thị thông báo lỗi */}
         {errorMessage ? <Text style={styles.errorMessage}>{errorMessage}</Text> : null}
@@ -54,11 +56,17 @@ const ManHinhDangNhap = ({ navigation }) => {
         {/* Hiển thị thông báo thành công */}
         {successMessage ? <Text style={styles.successMessage}>{successMessage}</Text> : null}
 
+<TouchableOpacity>
         <Text style={styles.forgotPassword}>Bạn quên mật khẩu?</Text>
-        <TouchableOpacity onPress={xuLyDangNhap} style={styles.loginButton}>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={()=>{
+          navigation.navigate('TrangChu')
+        }} style={styles.loginButton}>
           <Text style={styles.loginButtonText}>Đăng Nhập</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.registerButton}>
+        <TouchableOpacity onPress={()=>{
+          navigation.navigate('DangKy')
+        }} style={styles.registerButton}>
           <Text style={styles.registerButtonText}>Đăng Ký</Text>
         </TouchableOpacity>
       </View>
@@ -70,10 +78,9 @@ export default ManHinhDangNhap;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#FFFFFF',
+    height:'100%'
   },
   logoContainer: {
     alignItems: 'center',
@@ -82,47 +89,43 @@ const styles = StyleSheet.create({
   logo: {
     width: 150,
     height: 150,
+    margin:50
   },
   inputContainer: {
     width: '90%',
+    backgroundColor:'white',
+    elevation: 2, 
+    padding:20 
   },
   input: {
-    height: 50,
-    borderWidth: 1,
-    borderColor: 'gray',
-    paddingHorizontal: 10,
-    borderRadius: 5,
-    marginBottom: 10,
+    color:'#E0E0E0',
   },
   forgotPassword: {
-    alignSelf: 'flex-end',
-    marginBottom: 10,
-    color: 'blue',
+    alignSelf: 'center',
+    margin: 10,
+    color: 'black',
+    fontSize:19
   },
   loginButton: {
-    backgroundColor: 'blue',
-    height: 40,
-    borderRadius: 20,
+    backgroundColor: '#6394B7',
+    borderRadius: 50,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 10,
+    margin:25
   },
   loginButtonText: {
     color: 'white',
-    fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 19,
+    padding:15
   },
   registerButton: {
-    backgroundColor: 'gray',
-    height: 40,
-    borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 30
   },
   registerButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 16,
+    color: 'black',
+    fontSize: 19,
   },
   errorMessage: {
     color: 'red',

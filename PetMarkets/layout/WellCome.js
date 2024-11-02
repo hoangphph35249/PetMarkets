@@ -25,14 +25,14 @@ const Wellcome = ({navigation}) => {
         <Text style={styles.features}>Get personalized recommendations</Text>
         <Text style={styles.features}>Enjoy fast, free shipping</Text>
       </View>
-      <TouchableOpacity style={styles.ButtonBackground} onPress={()=>{navigation.navigate("TrangChu")}}>
+      <TouchableOpacity style={styles.ButtonBackground} onPress={()=>{navigation.navigate("DangNhap")}}>
         <Text style={styles.ButtonText}>
           Let's Get Started
         </Text>
       </TouchableOpacity> 
       <View style={{ flexDirection: 'row', marginTop: 10 }}>
         <Text>Already have an account?</Text>
-        <TouchableOpacity onPress={()=>{navigation.navigate("DangNhap")}}>
+        <TouchableOpacity onPress={()=>{navigation.navigate("DangKy")}}>
           <Text style={{ color: '#4CD964' }}> SIGN IN</Text>
         </TouchableOpacity>
       </View>

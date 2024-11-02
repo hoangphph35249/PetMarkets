@@ -47,7 +47,7 @@ export default function App() {
       </stack.Navigator>
     </NavigationContainer>
     // <View>
-    //   <Favorites/>
+    //   <ManHinhDangKy/>
     // </View>
   );
 }
