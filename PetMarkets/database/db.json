@@ -34,6 +34,12 @@
       "email": "a@gmail.com",
       "phone": "0987654321",
       "pass": "123456"
+    },
+    {
+      "id": "ba64",
+      "name": "quang",
+      "email": "q",
+      "pass": "1"
     }
   ],
   "animals": [
@@ -200,7 +206,8 @@
       "image": "https://www.lottemart.vn/media/catalog/product/cache/0x0/8/8/8853301550123.jpg.webp",
       "soLuong": 2
     }
-  ],"oder":[
+  ],
+  "oder": [
     {
       "id": "14",
       "name": "Pate cho mèo",

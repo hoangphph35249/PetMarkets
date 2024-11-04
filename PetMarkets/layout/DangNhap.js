@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, TextInput, View, TouchableOpacity, Image } from 'react-native';
+import { URL } from './TrangChu';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const ManHinhDangNhap = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -7,25 +9,50 @@ const ManHinhDangNhap = ({ navigation }) => {
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
-  const xuLyDangNhap = async () => {
-    setErrorMessage('');
-    setSuccessMessage('');
+  
+  const [getpass, setpass] = useState('')
+  const [getemail, setemail] = useState('');
+  const [getErrStr, setErrStr] = useState('');
 
-    // Giả lập kiểm tra email và mật khẩu
-    if (!email || !matKhau) {
-      setErrorMessage("Vui lòng điền đầy đủ email và mật khẩu.");
-      return;
+  const btnDangNhap=()=>{
+    if (getemail == '') {
+        setErrStr('Email không được bỏ trống!');
+        setModalVisible(true);
+        return;
     }
+    if (getpass == '') {
+        setErrStr('Password không được bỏ trống!');
+        setModalVisible(true);
+        return;
+    }
+    // lấy dữ liệu về
+    let url = `${URL}users?email=` + getemail;
 
-    if (email === 'user@example.com' && matKhau === 'password123') {
-      setSuccessMessage("Đăng nhập thành công!");
-      setTimeout(() => {
-        navigation.navigate('Home'); // Điều hướng đến màn hình chính (Home) sau khi đăng nhập thành công
-      }, 2000); // Chờ 2 giây để người dùng thấy thông báo thành công
-    } else {
-      setErrorMessage("Email hoặc mật khẩu không đúng.");
-    }
-  };
+    fetch(url)
+        .then((res) => { return res.json() })
+        .then(async (res_login) => {
+            if (res_login.length != 1) {
+                setErrStr('Email không chính xác!')
+                setModalVisible(true);
+                return;
+            } else {
+                let obj = res_login[0];
+                if (obj.pass != getpass) {
+                    setErrStr('Password không chính xác!');
+                    setModalVisible(true);
+                    return;
+                } else {
+                    try {
+                        await AsyncStorage.setItem('LoginInfo', JSON.stringify(obj));
+                        navigation.navigate('TrangChu')
+                        setErrStr('')
+                    } catch (e) {
+                        console.log(e);
+                    }
+                }
+            }
+        })
+}
 
   return (
     <SafeAreaView style={styles.container}>
@@ -37,21 +64,19 @@ const ManHinhDangNhap = ({ navigation }) => {
       <View style={styles.inputContainer}>
         <Text style={{fontSize:17, color: '#909090',marginVertical:10}}>Email</Text>
         <TextInput
-          value={email}
-          onChangeText={setEmail}
+        onChangeText={(txt)=>{setemail(txt)}}
           style={styles.input}
         />
         <View style={{backgroundColor:'#E0E0E0', height:1,marginBottom:20}}/>
         <Text style={{fontSize:17, color: '#909090',marginVertical:10}}>Password</Text>
         <TextInput
-          value={matKhau}
-          onChangeText={setMatKhau}
+        onChangeText={(txt)=>setpass(txt)}
           style={styles.input}
         />
         <View style={{backgroundColor:'#E0E0E0', height:1,marginBottom:20}}/>
 
         {/* Hiển thị thông báo lỗi */}
-        {errorMessage ? <Text style={styles.errorMessage}>{errorMessage}</Text> : null}
+        <Text style={styles.errorMessage}>{getErrStr}</Text>
 
         {/* Hiển thị thông báo thành công */}
         {successMessage ? <Text style={styles.successMessage}>{successMessage}</Text> : null}
@@ -60,7 +85,8 @@ const ManHinhDangNhap = ({ navigation }) => {
         <Text style={styles.forgotPassword}>Bạn quên mật khẩu?</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={()=>{
-          navigation.navigate('TrangChu')
+          // navigation.navigate('TrangChu')
+          btnDangNhap()
         }} style={styles.loginButton}>
           <Text style={styles.loginButtonText}>Đăng Nhập</Text>
         </TouchableOpacity>
