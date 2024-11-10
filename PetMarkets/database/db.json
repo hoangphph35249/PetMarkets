@@ -5,41 +5,32 @@
       "name": "Long",
       "email": "admin@gmail.com",
       "phone": "0987654321",
-      "pass": "123456"
+      "pass": "123456",
+      "location": ""
     },
     {
       "id": "1b17",
-      "name": "b",
+      "name": "Phạm Huy Hoàng",
       "email": "1",
-      "phone": "b",
-      "pass": "1"
+      "phone": "0987564312",
+      "pass": "1",
+      "location": "Nguyên Xá, Hà Nội"
     },
     {
       "id": "e944",
       "name": "2",
       "email": "2",
       "phone": "2",
-      "pass": "2"
-    },
-    {
-      "id": "f294",
-      "name": "long2",
-      "email": "long@gmail.com",
-      "phone": "0987654321",
-      "pass": "123456"
-    },
-    {
-      "id": "bfa2",
-      "name": "lll",
-      "email": "a@gmail.com",
-      "phone": "0987654321",
-      "pass": "123456"
+      "pass": "2",
+      "location": ""
     },
     {
       "id": "ba64",
-      "name": "quang",
+      "name": "Trần Duy Quang",
       "email": "q",
-      "pass": "1"
+      "phone": "1234567890",
+      "pass": "1",
+      "location": "Duy Tiến, Hà Nám"
     }
   ],
   "animals": [
@@ -51,7 +42,7 @@
       "price": 15000000,
       "description": "Chó Golden Retriever thuần chủng, thân thiện, năng động, thích hợp với gia đình có trẻ nhỏ.",
       "image": "https://petnow.com.vn/wp-content/uploads/2023/10/z4764632946149_f1ac3c74b1719253b57459d8e834e27d-scaled.jpg",
-      "favorites": 1,
+      "favorites": 0,
       "loai": 1
     },
     {
@@ -198,25 +189,29 @@
   ],
   "Cart": [
     {
-      "id": "4",
-      "name": "Pate cho mèo",
-      "brand": "Whiskas",
-      "price": 500000,
-      "description": "Pate cá ngừ có mùi vị thơm ngon, hấp dẫn mèo. Cá ngừ giàu omega 3 và các axit béo tốt cho sức khỏe của mèo.",
-      "image": "https://www.lottemart.vn/media/catalog/product/cache/0x0/8/8/8853301550123.jpg.webp",
+      "id": "631b",
+      "name": "Mèo Anh lông ngắn",
+      "price": 8000000,
+      "image": "https://cdn.eva.vn/upload/3-2022/images/2022-08-12/image31-1660292104-121-width2048height1972.jpg",
       "soLuong": 2
     }
   ],
   "oder": [
     {
-      "id": "14",
-      "name": "Pate cho mèo",
-      "brand": "Whiskas",
+      "id": "cde4",
+      "name": "Chó Golden Retriever",
+      "image": "https://petnow.com.vn/wp-content/uploads/2023/10/z4764632946149_f1ac3c74b1719253b57459d8e834e27d-scaled.jpg",
+      "price": 15000000,
+      "soLuong": 1,
+      "tong": 15500000
+    },
+    {
+      "id": "2868",
+      "name": "Bánh thưởng cho mèo",
+      "image": "https://www.petmart.vn/wp-content/uploads/2023/04/snack-banh-thuong-cho-meo-vi-thit-gia-cam-gimcat-nutri-pockets-poultry-treats.jpg",
       "price": 500000,
-      "description": "Pate cá ngừ có mùi vị thơm ngon, hấp dẫn mèo. Cá ngừ giàu omega 3 và các axit béo tốt cho sức khỏe của mèo.",
-      "image": "https://www.lottemart.vn/media/catalog/product/cache/0x0/8/8/8853301550123.jpg.webp",
-      "favorites": 0,
-      "loai": 3
+      "soLuong": 1,
+      "tong": 15500000
     }
   ]
 }

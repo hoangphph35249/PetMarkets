@@ -19,6 +19,7 @@ import AddPaymentMethodScreen from './layout/AddPayMethods';
 import SuccessScreen from './layout/ThanhCong';
 import SettingsScreen from './layout/Setting';
 import ShippingAddressScreen from './layout/ShippingAddress';
+import CheckOut from './layout/CheckOut';
 
 export default function App() {
   const stack = createNativeStackNavigator()
@@ -43,12 +44,14 @@ export default function App() {
       <stack.Screen  component={ShippingAddressScreen} name='ShippingAddress'/>
       
       <stack.Screen  component={SeeAll} name='SeeAll'/>
+      <stack.Screen  component={CheckOut} name='CheckOut'/>
      
       </stack.Navigator>
     </NavigationContainer>
     // <View>
-    //   <ManHinhDangKy/>
+    //   <ShippingAddressScreen/>
     // </View>
+    
   );
 }
 

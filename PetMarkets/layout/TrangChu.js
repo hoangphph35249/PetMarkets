@@ -1,11 +1,35 @@
 import { ImageBackground, ScrollView, StyleSheet, Text, View, SafeAreaView, Image, FlatList, TouchableOpacity, TextInput } from 'react-native'
 import React, { useEffect, useState } from 'react'
-export const URL = 'http://192.168.0.106:3000/'
+export const URL = 'http://192.168.1.148:3000/'
 import Swiper from 'react-native-swiper';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 const TrangChu = ({navigation}) => {
   const [data, setdata] = useState([])
   const [thucAn, setthucAn] = useState([])
   const [phuKien, setphuKien] = useState([])
+  const [user, setuser] = useState([])
+
+  
+  const retrieveData = async () => {
+    try {
+      const UserData = await AsyncStorage.getItem('LoginInfo');
+      if (UserData != null) {
+        setuser(JSON.parse(UserData));
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  // const [uesr, setuesr] = useState()
+
+  // AsyncStorage.getItem('LoginInfo', (err, result) => {
+    
+  //   //  console.log(result);
+  //    setuesr(JSON.parse(result))
+     
+    
+  // });
 
   const getData = async () => {
     await fetch(URL + 'animals?loai=1')
@@ -50,6 +74,7 @@ const TrangChu = ({navigation}) => {
     getData()
     getPhuKien()
     getThucAn()
+    retrieveData()
   }, [])
 
   const renderItem = ({ item }) => {
@@ -74,7 +99,8 @@ const TrangChu = ({navigation}) => {
 
       <ScrollView style={styles.conner}>
         <View style={{ padding: 10, backgroundColor: '#6394B7', height: 170, borderBottomRightRadius: 70, borderBottomLeftRadius: 70, width: '100%' }} >
-          <Text style={[styles.txt, { color: 'white', fontWeight: 'bold' }]}>WellCome</Text>
+        <Text style={[styles.txt, { color: 'white', fontWeight: 'bold' }]}>WellCome</Text>
+        <Text style={[styles.txt, { color: 'white', fontWeight: 'bold' }]}>{user.name}</Text>
           <View style={styles.input} >
             <Image source={require('../Image/Vector.png')} style={styles.eyeImage} />
             <TextInput style={styles.input1}
@@ -216,7 +242,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     color: 'black',
     marginLeft: 25,
-    margin: 2,
+    margin: 0,
   },
   img: {
     width: '100%',

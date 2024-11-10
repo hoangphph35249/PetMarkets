@@ -34,7 +34,9 @@ const ManHinhDangKy = ({ navigation }) => {
     const newUser = {
       name: name,
       email: getemail,
+      phone: "",
       pass: getpass,
+      location: ""
     }
     // gọi API để thêm user mới vào JSON SERVER
     let url = `${URL}users`

@@ -6,6 +6,17 @@ import { URL } from './TrangChu'
 const Cart = ({navigation}) => {
     const [data, setdata] = useState([])
 
+    const [total, setTotal] = useState(0);
+  
+
+
+    const calculateTotal = (data) => {
+        return data.reduce((total, data) => {
+          return total + data.price * data.soLuong;
+        }, 0);
+      };
+
+
     const getData = async () => {
         await fetch(URL + 'Cart')
             .then(res => res.json())
@@ -19,7 +30,9 @@ const Cart = ({navigation}) => {
     }
     useEffect(() => {
         getData()
-    }, [])
+
+        setTotal(calculateTotal(data));
+    }, [data])
 
     const handDelete = async (id) => {
        await fetch(URL + 'Cart/' + id,
@@ -100,10 +113,12 @@ const Cart = ({navigation}) => {
                 <View style={{ backgroundColor: '#E0E0E0', height: 1, marginVertical: 20 }} />
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 20 }}>
                     <Text style={{ fontSize: 19, fontWeight: 'bold', color: 'gray' }}>Total:</Text>
-                    <Text style={{ fontSize: 19, fontWeight: 'bold', color: 'gray' }}>$ 5000</Text>
+                    <Text style={{ fontSize: 19, fontWeight: 'bold', color: 'gray' }}>$ {total}</Text>
                 </View>
 
-                <TouchableOpacity style={{ width: '100%', height: 60, padding: 20, backgroundColor: '#6394B7', borderRadius: 10, alignItems: 'center' }}>
+                <TouchableOpacity onPress={()=>{
+                    navigation.navigate('CheckOut',{data:data , total: total})
+                }} style={{ width: '100%', height: 60, padding: 20, backgroundColor: '#6394B7', borderRadius: 10, alignItems: 'center' }}>
                     <Text style={{ fontSize: 19, color: 'white', fontWeight: 'bold' }}>Check Out</Text>
                 </TouchableOpacity>
             </View>
