@@ -1,6 +1,6 @@
 import { ImageBackground, ScrollView, StyleSheet, Text, View, SafeAreaView, Image, FlatList, TouchableOpacity, TextInput } from 'react-native'
 import React, { useEffect, useState } from 'react'
-export const URL = 'http://192.168.0.103:3000/'
+export const URL = 'http://192.168.1.148:3000/'
 import Swiper from 'react-native-swiper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const TrangChu = ({navigation}) => {
@@ -101,6 +101,7 @@ const TrangChu = ({navigation}) => {
         <View style={{ padding: 10, backgroundColor: '#6394B7', height: 170, borderBottomRightRadius: 70, borderBottomLeftRadius: 70, width: '100%' }} >
         <Text style={[styles.txt, { color: 'white', fontWeight: 'bold' }]}>WellCome</Text>
         <Text style={[styles.txt, { color: 'white', fontWeight: 'bold' }]}>{user.name}</Text>
+     
           <View style={styles.input} >
             <Image source={require('../Image/Vector.png')} style={styles.eyeImage} />
             <TextInput style={styles.input1}

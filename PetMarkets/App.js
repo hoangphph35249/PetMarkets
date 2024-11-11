@@ -20,6 +20,7 @@ import SuccessScreen from './layout/ThanhCong';
 import SettingsScreen from './layout/Setting';
 import ShippingAddressScreen from './layout/ShippingAddress';
 import CheckOut from './layout/CheckOut';
+import Seach from './layout/Seach';
 
 export default function App() {
   const stack = createNativeStackNavigator()
@@ -45,6 +46,7 @@ export default function App() {
       
       <stack.Screen  component={SeeAll} name='SeeAll'/>
       <stack.Screen  component={CheckOut} name='CheckOut'/>
+      <stack.Screen  component={Seach} name='Seach'/>
      
       </stack.Navigator>
     </NavigationContainer>

@@ -10,11 +10,11 @@
     },
     {
       "id": "1b17",
-      "name": "Phạm Huy Hoàng",
+      "name": "Phạm Huy hòa",
       "email": "1",
-      "phone": "0987564312",
+      "phone": "1278998",
       "pass": "1",
-      "location": "Nguyên Xá, Hà Nội"
+      "location": "Dùy Tiến"
     },
     {
       "id": "e944",
@@ -189,36 +189,13 @@
   ],
   "Cart": [
     {
-      "id": "631b",
-      "name": "Mèo Anh lông ngắn",
-      "price": 8000000,
-      "image": "https://cdn.eva.vn/upload/3-2022/images/2022-08-12/image31-1660292104-121-width2048height1972.jpg",
-      "soLuong": 2
-    },
-    {
-      "id": "50dd",
-      "name": "Chó Golden Retriever",
-      "price": 15000000,
-      "image": "https://petnow.com.vn/wp-content/uploads/2023/10/z4764632946149_f1ac3c74b1719253b57459d8e834e27d-scaled.jpg",
+      "id": "3baa",
+      "name": "Vòng cổ và dây dắt",
+      "price": 100000,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT51H4IpnDOULYUpy2Lk8ggop_bIcM4kvs1BajxWjH6m4buhjF1Y7yezQFJQKHs",
       "soLuong": 1
     }
   ],
-  "oder": [
-    {
-      "id": "cde4",
-      "name": "Chó Golden Retriever",
-      "image": "https://petnow.com.vn/wp-content/uploads/2023/10/z4764632946149_f1ac3c74b1719253b57459d8e834e27d-scaled.jpg",
-      "price": 15000000,
-      "soLuong": 1,
-      "tong": 15500000
-    },
-    {
-      "id": "2868",
-      "name": "Bánh thưởng cho mèo",
-      "image": "https://www.petmart.vn/wp-content/uploads/2023/04/snack-banh-thuong-cho-meo-vi-thit-gia-cam-gimcat-nutri-pockets-poultry-treats.jpg",
-      "price": 500000,
-      "soLuong": 1,
-      "tong": 15500000
-    }
-  ]
+  "oder": [],
+  "search":[]
 }

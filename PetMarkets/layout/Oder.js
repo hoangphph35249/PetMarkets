@@ -62,6 +62,7 @@ const Oder = ({ navigation }) => {
               
             </View>
             <Text style={{ fontWeight: 'bold', marginTop: 10, fontSize: 15, color: 'black' }}>$ {item.price}</Text>
+            <Text style={{fontSize:15,color:'green',textAlign:'right'}}>Delivered</Text>
           </View>
 
         </View>

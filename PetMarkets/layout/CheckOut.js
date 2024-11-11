@@ -1,4 +1,4 @@
-import { Alert, Image, SafeAreaView, ScrollView, StyleSheet, Text, ToastAndroid, TouchableOpacity, View } from 'react-native'
+import { Alert, Image, Modal, SafeAreaView, ScrollView, StyleSheet, Text, ToastAndroid, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { URL } from './TrangChu';
@@ -12,16 +12,9 @@ const CheckOut = ({ navigation, route }) => {
 
   const [tenData, settenData] = useState([])
 
+  const [modolxacNhan, setmodolxacNhan] = useState(false)
 
-  
-
-useEffect(() => {
-  // geTenData()
-  retrieveData()
-
-}, [])
-
-  const retrieveData = async () => {
+ const retrieveData = async () => {
     try {
       const UserData = await AsyncStorage.getItem('LoginInfo');
       if (UserData != null) {
@@ -31,6 +24,15 @@ useEffect(() => {
       console.log(error);
     }
   }
+
+
+  useEffect(() => {
+    geTenData()
+    retrieveData()
+    getData()
+  }, [user])
+
+ 
 
 
   const getData = async () => {
@@ -46,42 +48,42 @@ useEffect(() => {
   }
 
 
-  // const geTenData = async () => {
-  //   await fetch(URL + 'users/'+user.id)
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       settenData(data)
-  //     }).catch(errr => {
-  //       console.log(errr)
-  
-  //     })
-  
-  // }
- 
+  const geTenData = async () => {
+    await fetch(URL + 'users/'+user.id)
+      .then(res => res.json())
+      .then(data => {
+        settenData(data)
+      }).catch(errr => {
+        console.log(errr)
+
+      })
+
+  }
+
 
 
   const handleDeleteAll = () => {
-    
-    fetch(URL+'Cart', {
+
+    fetch(URL + 'Cart', {
       method: 'DELETE'
     })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Failed to delete data');
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log('Data deleted successfully:', data);
-      // Cập nhật trạng thái hoặc thực hiện các hành động khác sau khi xóa thành công
-      setdata(data)
-    })
-    .catch(error => {
-      console.error('Error deleting data:', error);
-    })
-    .finally(() => {
-      
-    });
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to delete data');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Data deleted successfully:', data);
+        // Cập nhật trạng thái hoặc thực hiện các hành động khác sau khi xóa thành công
+        setdata(data)
+      })
+      .catch(error => {
+        console.error('Error deleting data:', error);
+      })
+      .finally(() => {
+
+      });
   };
 
 
@@ -106,7 +108,6 @@ useEffect(() => {
         })
         if (res.ok) {
           console.log("Thêm thành công");
-          
         } else {
           console.log("Thêm thất bại");
         }
@@ -138,21 +139,21 @@ useEffect(() => {
 
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10 }}>
             <Text style={{ fontSize: 19, color: 'gray' }}>Shipping Address</Text>
-            <TouchableOpacity onPress={()=>{
+            <TouchableOpacity onPress={() => {
               navigation.navigate('ShippingAddress')
             }}>
-            <Image source={require('../Image/edit.png')} />
-</TouchableOpacity>
+              <Image source={require('../Image/edit.png')} />
+            </TouchableOpacity>
           </View>
 
 
 
           <View style={{ borderRadius: 10, backgroundColor: 'white' }}>
-            <Text style={{ fontSize: 19, fontWeight: 'bold', margin: 15 }}>{user.name}  </Text>
+            <Text style={{ fontSize: 19, fontWeight: 'bold', margin: 15 }}>{tenData.name}  </Text>
             <View style={{ backgroundColor: '#E0E0E0', height: 2 }} />
 
             <Text style={{ fontSize: 15, color: 'gray', margin: 15 }}>
-            {user.location} 
+              {tenData.location}
             </Text>
           </View>
 
@@ -215,6 +216,26 @@ useEffect(() => {
           <Text style={{ fontSize: 19, color: 'white', fontWeight: 'bold' }}>SUBMIT ORDER</Text>
         </TouchableOpacity>
       </View>
+
+      <Modal 
+      visible={modolxacNhan}
+      animationType='slide'
+      transparent={true}
+      >
+        <View>
+          <View>
+            <Text>Bạn có xác nhận thanh toán Không ?</Text>
+            <View style={{flexDirection:'row',justifyContent:'space-between'}}>
+            <Text style={{color:'red',fontSize:'19',padding:10}}>
+                Hủy
+              </Text>
+              <Text style={{color:'red',fontSize:'19',padding:10}}>
+                Xác Nhận
+              </Text>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </SafeAreaView>
   )
 }

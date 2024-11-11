@@ -58,7 +58,9 @@ const Porofile = ({navigation,route}) => {
   <Text style={{fontSize:19,alignSelf:'center'}}>{'>'}</Text>
 </TouchableOpacity>
 
-<TouchableOpacity style={{flexDirection:'row', margin:10, backgroundColor:'white',padding:10,justifyContent:'space-between',borderRadius:10}}>
+<TouchableOpacity onPress={() => {
+        navigation.navigate('ShippingAddress')
+      }} style={{flexDirection:'row', margin:10, backgroundColor:'white',padding:10,justifyContent:'space-between',borderRadius:10}}>
   <Text  style={{fontSize:15,alignSelf:'center',fontWeight:'bold'}}>Shipping Addresses</Text>
   <Text style={{fontSize:19,alignSelf:'center'}}>{'>'}</Text>
 </TouchableOpacity>
