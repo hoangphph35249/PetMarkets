@@ -16,7 +16,7 @@ const CheckOut = ({ navigation, route }) => {
   
 
 useEffect(() => {
-  geTenData()
+  // geTenData()
   retrieveData()
 
 }, [])
@@ -46,17 +46,17 @@ useEffect(() => {
   }
 
 
-  const geTenData = async () => {
-    await fetch(URL + 'users/'+user.id)
-      .then(res => res.json())
-      .then(data => {
-        settenData(data)
-      }).catch(errr => {
-        console.log(errr)
+  // const geTenData = async () => {
+  //   await fetch(URL + 'users/'+user.id)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       settenData(data)
+  //     }).catch(errr => {
+  //       console.log(errr)
   
-      })
+  //     })
   
-  }
+  // }
  
 
 
@@ -106,6 +106,7 @@ useEffect(() => {
         })
         if (res.ok) {
           console.log("Thêm thành công");
+          
         } else {
           console.log("Thêm thất bại");
         }
@@ -209,6 +210,7 @@ useEffect(() => {
           // handThanhtoandelete()
           // handleDeleteAll()
           handThanhtoan()
+          navigation.navigate('ThanhCong')
         }} style={{ width: '100%', height: 60, padding: 20, backgroundColor: '#6394B7', borderRadius: 10, alignItems: 'center' }}>
           <Text style={{ fontSize: 19, color: 'white', fontWeight: 'bold' }}>SUBMIT ORDER</Text>
         </TouchableOpacity>

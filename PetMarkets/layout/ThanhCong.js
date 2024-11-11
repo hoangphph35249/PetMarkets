@@ -5,11 +5,11 @@ const SuccessScreen = ({ navigation }) => {
   const handleTrackOrders = () => {
     // Logic for tracking orders can go here
     console.log('Track Orders Pressed');
-    navigation.navigate('TrackOrders'); // Example navigation to track orders screen
+    navigation.navigate('Oder'); // Example navigation to track orders screen
   };
 
   const handleBackToHome = () => {
-    navigation.navigate('Home'); // Example navigation back to home screen
+    navigation.navigate('TrangChu'); // Example navigation back to home screen
   };
 
   return (
@@ -33,7 +33,7 @@ export default SuccessScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FFF',

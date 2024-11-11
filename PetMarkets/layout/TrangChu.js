@@ -1,6 +1,6 @@
 import { ImageBackground, ScrollView, StyleSheet, Text, View, SafeAreaView, Image, FlatList, TouchableOpacity, TextInput } from 'react-native'
 import React, { useEffect, useState } from 'react'
-export const URL = 'http://192.168.1.148:3000/'
+export const URL = 'http://192.168.0.103:3000/'
 import Swiper from 'react-native-swiper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const TrangChu = ({navigation}) => {

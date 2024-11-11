@@ -194,6 +194,13 @@
       "price": 8000000,
       "image": "https://cdn.eva.vn/upload/3-2022/images/2022-08-12/image31-1660292104-121-width2048height1972.jpg",
       "soLuong": 2
+    },
+    {
+      "id": "50dd",
+      "name": "Chó Golden Retriever",
+      "price": 15000000,
+      "image": "https://petnow.com.vn/wp-content/uploads/2023/10/z4764632946149_f1ac3c74b1719253b57459d8e834e27d-scaled.jpg",
+      "soLuong": 1
     }
   ],
   "oder": [
